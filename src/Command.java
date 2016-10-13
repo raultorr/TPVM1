@@ -1,7 +1,7 @@
 
 public class Command {
 
-	public static enum ENUM_COMMAND {help,load,store,add,sub,mul,div,out,halt}
+	public static enum ENUM_COMMAND {help,quit,newinst,run,reset,replace}
 	private ENUM_COMMAND command;
 	private ByteCode instruction;
 	private int replace;	

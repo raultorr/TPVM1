@@ -9,22 +9,16 @@ public class CommandParser{
 			
 			if (arrayOfStrings[0].equalsIgnoreCase("help")) {	
 				command = new Command(Command.ENUM_COMMAND.help);
-			} else if(arrayOfStrings[0].equalsIgnoreCase("load")) {
-				command = new Command(Command.ENUM_COMMAND.load);
-			} else if(arrayOfStrings[0].equalsIgnoreCase("store")) {
-				command = new Command(Command.ENUM_COMMAND.store);
-			} else if(arrayOfStrings[0].equalsIgnoreCase("add")) {
-				command = new Command(Command.ENUM_COMMAND.add);
-			} else if(arrayOfStrings[0].equalsIgnoreCase("sub")) {
-				command = new Command(Command.ENUM_COMMAND.sub);
-			} else if(arrayOfStrings[0].equalsIgnoreCase("mul")) {
-				command = new Command(Command.ENUM_COMMAND.mul);
-			} else if(arrayOfStrings[0].equalsIgnoreCase("div")) {
-				command = new Command(Command.ENUM_COMMAND.div);
-			} else if(arrayOfStrings[0].equalsIgnoreCase("out")) {
-				command = new Command(Command.ENUM_COMMAND.out);
-			} else if(arrayOfStrings[0].equalsIgnoreCase("halt")) {
-				command = new Command(Command.ENUM_COMMAND.halt);
+			} else if(arrayOfStrings[0].equalsIgnoreCase("quit")) {
+				command = new Command(Command.ENUM_COMMAND.quit);
+			} else if(arrayOfStrings[0].equalsIgnoreCase("newinst")) {
+				command = new Command(Command.ENUM_COMMAND.newinst);
+			} else if(arrayOfStrings[0].equalsIgnoreCase("run")) {
+				command = new Command(Command.ENUM_COMMAND.run);
+			} else if(arrayOfStrings[0].equalsIgnoreCase("reset")) {
+				command = new Command(Command.ENUM_COMMAND.reset);
+			} else if(arrayOfStrings[0].equalsIgnoreCase("replace")) {
+				command = new Command(Command.ENUM_COMMAND.replace);
 			}
 			return command;
 		}
