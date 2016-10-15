@@ -21,4 +21,8 @@ public class ByteCode {
 	public int getParam(){
 		return this.param;
 	}
+	
+	public ENUM_BYTECODE getName(){
+		return name;
+	}
 }

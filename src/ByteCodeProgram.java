@@ -30,11 +30,13 @@ public class ByteCodeProgram {
 	}
 	
 	public String toString (){
-		String result="Current program:\n";
-		for (int i=0; i < program.length; i++){
+		String result = "";
+		if(program.length != 0){
+			result="Current program:\n";
+				for (int i=0; i < program.length; i++){
 			result = result + i + ": " + program[i].toString() + "\n";
+			}
 		}
-	
 		return result;
 	}
 
