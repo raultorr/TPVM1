@@ -4,7 +4,7 @@ public class CommandParser{
 	
 		public static Command parse(String line){
 			Command command = null;	
-			ByteCode intruction = null;	//Initializes to null
+			ByteCode instruction = null;	//Initializes to null
 			String[] arrayOfStrings = line.split(" ");					//Splits the big string into an array of string divided by white spaces
 			String secondaryRawInput=arrayOfStrings[1];
 			
@@ -18,7 +18,8 @@ public class CommandParser{
 				command = new Command(Command.ENUM_COMMAND.quit);
 			} else if(arrayOfStrings[0].equalsIgnoreCase("newinst")) {
 				command = new Command(Command.ENUM_COMMAND.newinst);
-				instruction
+				instruction = ByteCodeParser.parse(secondaryRawInput);
+				command.setByteCodeInstruction(instruction);
 			} else if(arrayOfStrings[0].equalsIgnoreCase("run")) {
 				command = new Command(Command.ENUM_COMMAND.run);
 			} else if(arrayOfStrings[0].equalsIgnoreCase("reset")) {

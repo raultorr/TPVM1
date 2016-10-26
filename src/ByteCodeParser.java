@@ -4,8 +4,8 @@ public class ByteCodeParser {
 	public static ByteCode parse (String s){
 		ByteCode instruction = null;
 		String[] arrayOfStrings = s.split(" ");
-		
-		if (arrayOfStrings[0].equalsIgnoreCase("push")) {	
+				
+		if (arrayOfStrings[0].equalsIgnoreCase("push")) {	//HERE WE ARE NOT CHECKING IF THE CONVERSION OF THE INTEGER IS VALID, IF IT IS NOT, IT WILL THROW AN EXCEPTION. WE ARE NOT CATCHING IT DUE WE HAVEN'T STUDIED IT ALREADY
 			instruction = new ByteCode(ByteCode.ENUM_BYTECODE.push, Integer.parseInt(arrayOfStrings[1]));
 		} else if(arrayOfStrings[0].equalsIgnoreCase("load")) {
 			instruction = new ByteCode(ByteCode.ENUM_BYTECODE.load, Integer.parseInt(arrayOfStrings[1]));
