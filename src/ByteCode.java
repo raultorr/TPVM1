@@ -1,7 +1,7 @@
 
 public class ByteCode {
 	
-	public static enum ENUM_BYTECODE {push,load,store,add,sub,div,out,halt}
+	public static enum ENUM_BYTECODE {push,load,store,add,sub, mul, div,out,halt} 
 	private ENUM_BYTECODE name;
 	private int param;																//Used with instructions: push, store and load
 	
