@@ -26,6 +26,8 @@ public class CommandParser{
 				command = new Command(Command.ENUM_COMMAND.reset);
 			} else if(arrayOfStrings[0].equalsIgnoreCase("replace")) {
 				command = new Command(Command.ENUM_COMMAND.replace);
+				command.setReplaceNumber(Integer.parseInt(arrayOfStrings[1]));  //Sets the number on the command attribute to be replaced. (We are not checking if its a number; i.e, it can throw an exception.)
+				
 			}
 			return command;
 		}
