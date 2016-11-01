@@ -3,7 +3,7 @@ import java.util.*;
 public class Engine {
 
 		private ByteCodeProgram program;
-		private boolean end=false;
+		private boolean end = false;
 	
 		public void start() {
 			Scanner scanner = new Scanner(System.in);
