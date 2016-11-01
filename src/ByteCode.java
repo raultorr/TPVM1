@@ -1,8 +1,8 @@
 
 public class ByteCode {
 	
-	public static enum ENUM_BYTECODE {push,load,store,add,sub, mul, div,out,halt} 
-	private ENUM_BYTECODE name;
+	public static enum ENUM_BYTECODE {push, load, store, add, sub, mul, div, out, halt} 
+	private ENUM_BYTECODE name; 
 	private int param;																//Used with instructions: push, store and load
 	
 	public ByteCode (ENUM_BYTECODE instructionType){								//Normal constructor of the class ByteCode
