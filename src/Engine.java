@@ -6,11 +6,13 @@ public class Engine {
 		private boolean end=false;
 	
 		public void start() {
-			System.out.println("Type a command: ");					
 			Scanner scanner = new Scanner(System.in);
+			String rawInput;
+			Command command; 
+			
+			System.out.print(">");					
 			while(!end){
-				String rawInput = scanner.nextLine();
-				Command command;
+				rawInput = scanner.nextLine();
 				command = CommandParser.parse(rawInput);
 				if (command.equals(null)){
 					System.err.println("Error: incorrect command");
@@ -18,7 +20,6 @@ public class Engine {
 					System.err.println("Error: incorrect execution of command");
 				}
 			}
-			
 			scanner.close();
 		}
 		 //METODOS PARA EJECUTAR COMANDOS
