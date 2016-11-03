@@ -7,5 +7,12 @@ public class Memory {
 		program[n] = newInstruction;
 	}
 	
+	public boolean write(int pos, int value) {
+	
+	}
+	
+	public int read(int pos) {
+	
+	}
 	
 }
