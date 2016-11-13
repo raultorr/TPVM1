@@ -1,5 +1,3 @@
-import Command.ENUM_COMMAND;
-
 public class Command {
 	
 	public static enum ENUM_COMMAND {help,quit,newinst,run,reset,replace}
