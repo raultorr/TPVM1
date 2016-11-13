@@ -25,4 +25,12 @@ public class ByteCode {
 	public ENUM_BYTECODE getName(){
 		return name;
 	}
+	
+	public String toString(){
+		String output;
+		output = name.toString().toUpperCase();
+		if (name==ENUM_BYTECODE.push || name==ENUM_BYTECODE.load || name==ENUM_BYTECODE.store)
+			output = output + " " + param;
+		return output;
+	}
 }

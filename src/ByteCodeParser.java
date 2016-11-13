@@ -1,5 +1,6 @@
 
 public class ByteCodeParser {
+	
 	public static ByteCode parse (String s){
 		ByteCode instruction = null;
 		String[] arrayOfStrings = s.split(" ");
@@ -26,8 +27,6 @@ public class ByteCodeParser {
 		} else if(arrayOfStrings[0].equalsIgnoreCase("halt")) {
 			instruction = new ByteCode(ByteCode.ENUM_BYTECODE.halt);
 		}
-		
 		return instruction;
 	}
-		
 }

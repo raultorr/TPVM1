@@ -2,7 +2,11 @@ import java.util.Arrays;
 
 public class ByteCodeProgram {
 	
-	private ByteCode[] program;
+private ByteCode[] program;
+
+	public ByteCodeProgram(){
+		 program = new ByteCode[0];
+	}
 	
 	public void setNextByteCodeInstruction(ByteCode nextInstruction){
 		extendByteCodeArrayLength(1);
@@ -29,15 +33,18 @@ public class ByteCodeProgram {
 		program = Arrays.copyOf(program,program.length - n );
 	}
 	
+	public int getByteCodeProgramLength(){
+		return program.length;
+	}
+	
 	public String toString (){
 		String result = "";
 		if(program.length != 0){
-			result="Current program:\n";
+			result="\nCurrent program:\n";
 				for (int i=0; i < program.length; i++){
 			result = result + i + ": " + program[i].toString() + "\n";
 			}
 		}
 		return result;
 	}
-
 }

@@ -1,6 +1,7 @@
+import Command.ENUM_COMMAND;
 
 public class Command {
-
+	
 	public static enum ENUM_COMMAND {help,quit,newinst,run,reset,replace}
 	private ENUM_COMMAND command;
 	private ByteCode instruction;
@@ -31,10 +32,29 @@ public class Command {
 	}
 	
 	public boolean execute(Engine engine){
-		boolean success=false;
+		boolean success = false;
 		
-		
+		switch(command) {
+			case help: 
+				success = engine.executeHelp();
+				break;
+			case quit: 
+				success = engine.executeQuit();
+				break;
+			case newinst: 
+				success = engine.executeNewInst(instruction);
+				break;
+			case run: 
+				success = engine.executeRun();
+				break;
+			case reset: 
+				success = engine.executeReset();
+				break;
+			case replace: 
+				success = engine.executeReplace(replace);
+		}
 		return success;
 	}
 	
+
 }
