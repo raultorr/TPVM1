@@ -34,7 +34,7 @@ public class CPU {
 	 * @return If the ByteCode instruction was successfully executed
 	 */
 	public boolean execute(ByteCode instr) {
-		boolean execution = false;
+		boolean execution = true;
 		ByteCode.ENUM_BYTECODE i = instr.getName();
 		int n = instr.getParam();
 		int aux, result;
@@ -55,7 +55,6 @@ public class CPU {
 		case add:
 			if (op.getOccupied() < 2) {
 				execution = false;
-				System.out.println("\nError: incorrect execution of arithmetic operation");
 			} else {
 				aux = op.takeValue();
 				op.deleteValue();
@@ -68,7 +67,6 @@ public class CPU {
 		case sub:
 			if (op.getOccupied() < 2) {
 				execution = false;
-				System.out.println("\nError: incorrect execution of arithmetic operation");
 			} else {
 				aux = op.takeValue();
 				op.deleteValue();
@@ -81,7 +79,6 @@ public class CPU {
 		case mul:
 			if (op.getOccupied() < 2) {
 				execution = false;
-				System.out.println("\nError: incorrect execution of arithmetic operation");
 			} else {
 				aux = op.takeValue();
 				op.deleteValue();
@@ -94,14 +91,17 @@ public class CPU {
 		case div:
 			if (op.getOccupied() < 2) {
 				execution = false;
-				System.out.println("\nError: incorrect execution of arithmetic operation");
 			} else {
 				aux = op.takeValue();
-				op.deleteValue();
-				n = op.takeValue();
-				op.deleteValue();
-				result = n / aux;
-				op.addValue(result);
+				if (aux != 0) {
+					op.deleteValue();
+					n = op.takeValue();
+					op.deleteValue();
+					result = n / aux;
+					op.addValue(result);
+				} else {
+					execution = false;
+				}
 			}
 			break;
 		case out:

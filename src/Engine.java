@@ -110,10 +110,12 @@ public class Engine {
 					System.out.println("\nHALT: Stopping VM...");
 					break;
 				} else {
-					cpu.execute(program.getByteCodeInstructionOnPosition(i));
+					if (!cpu.execute(program.getByteCodeInstructionOnPosition(i))) {
+
+					}
 				}
 			}
-			success = true;
+
 		}
 
 		return success;
