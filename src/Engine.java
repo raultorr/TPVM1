@@ -102,7 +102,7 @@ public class Engine {
 	public boolean executeRun() {
 
 		cpu = new CPU();
-		boolean success = false;
+		boolean success = true;
 		if (program.getByteCodeProgramLength() == 0) {
 		} else {
 			for (int i = 0; i < (program.getByteCodeProgramLength()); i++) {
@@ -111,7 +111,7 @@ public class Engine {
 					break;
 				} else {
 					if (!cpu.execute(program.getByteCodeInstructionOnPosition(i))) {
-
+						success = false;
 					}
 				}
 			}
